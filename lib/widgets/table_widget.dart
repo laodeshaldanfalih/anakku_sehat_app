@@ -65,7 +65,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
@@ -83,7 +83,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
@@ -101,7 +101,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
@@ -109,7 +109,7 @@ class TableWidget extends StatelessWidget {
                           ),
                           Container(
                             height: 34,
-                            width: 65,
+                            width: 55,
                             decoration: const BoxDecoration(
                               color: Color(0xff579143),
                             ),
@@ -119,7 +119,7 @@ class TableWidget extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
@@ -136,7 +136,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
@@ -154,7 +154,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
@@ -172,7 +172,7 @@ class TableWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),

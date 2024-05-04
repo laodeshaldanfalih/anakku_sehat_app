@@ -7,6 +7,12 @@ class StatusGiziScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arr = [
+      'Berikan ASI saja sampai usia 6 bulan',
+      'Rajin periksa ke dokter/Posyandu/Puskesmas  sebulan sekali',
+      'Jangan lupa mencatat berat badan dan tinggi badan di aplikasi Anakku Sehat',
+    ];
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 24),
@@ -19,7 +25,12 @@ class StatusGiziScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 60),
-              Text('Status gizi ${anak.namaPanggilan} saat lahir:'),
+              Text(
+                'Status gizi ${anak.namaPanggilan} saat lahir:',
+                style: const TextStyle(
+                  color: Colors.black,
+                ),
+              ),
               const SizedBox(height: 20),
               Text(
                 'Berat lahir:',
@@ -34,14 +45,17 @@ class StatusGiziScreen extends StatelessWidget {
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: const Color(0xffFF0000),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(
-                    child: Text(
-                  'Terancam Stunting',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )),
+                child: const Center(
+                  child: Text(
+                    'TIDAK NORMAL',
+                    style: TextStyle(
+                      color: Color(0xffF6C1C8),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
               Text(
@@ -57,29 +71,51 @@ class StatusGiziScreen extends StatelessWidget {
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: const Color(0xffFF0000),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
-                    'Terancam Stunting',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    'TIDAK NORMAL',
+                    style: TextStyle(
+                      color: Color(0xffF6C1C8),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 30),
               Container(
-                width: 350,
+                height: 150,
                 decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    '• Berikan ASI saja sampai usia 6 bulan \n • Rajin periksa ke dokter/Posyandu/Puskesmas  sebulan sekali \n • Jangan lupa mencatat berat badan dan tinggi badan di aplikasi Anakku Sehat',
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 3),
+                    color: const Color(0xffFF0000)),
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: const Color(0xffD9D9D9),
+                          child: Text(
+                            '${(index + 1)}',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          arr[index],
+                          style: const TextStyle(
+                            color: Color(0xffF6C1C8),
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
+                  itemCount: arr.length,
                 ),
               ),
               const SizedBox(

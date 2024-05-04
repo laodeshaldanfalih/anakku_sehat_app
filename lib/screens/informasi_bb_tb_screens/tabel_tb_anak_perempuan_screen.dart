@@ -10,9 +10,7 @@ class TabelTBAnakPerempuanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -27,24 +25,38 @@ class TabelTBAnakPerempuanScreen extends StatelessWidget {
               //Tabel
               const TableWidget(tableAnak: tabelTBP),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: SizedBox(
-                      height: 60,
-                      child: Center(
-                        child: Image.asset('assets/images/home_button.png'),
+              SizedBox(
+                height: 80,
+                width: double.infinity,
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    Positioned(
+                      left: 20,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pop();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: SizedBox(
+                            height: 60,
+                            child: Center(
+                              child:
+                                  Image.asset('assets/images/home_button.png'),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  SimpanButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    title: 'KEMBALI',
-                  ),
-                ],
-              )
+                    SimpanButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      title: 'KEMBALI',
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

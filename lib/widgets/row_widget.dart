@@ -33,7 +33,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -49,7 +49,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -65,7 +65,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -73,7 +73,7 @@ class RowWidget extends StatelessWidget {
         ),
         Container(
           height: 34,
-          width: 65,
+          width: 55,
           color: const Color(0xff579143),
           child: Center(
             child: Text(
@@ -81,7 +81,7 @@ class RowWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Colors.black,
-                fontSize: 15,
+                fontSize: 12,
               ),
             ),
           ),
@@ -96,7 +96,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -112,7 +112,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),
@@ -130,7 +130,7 @@ class RowWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 12,
                 ),
               ),
             ),

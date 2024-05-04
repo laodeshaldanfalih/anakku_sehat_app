@@ -9,44 +9,57 @@ class TabelBBAnakLakiScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/male_gender_icon.png'),
-              Text(
-                'Tabel Berat Badan Anak LAKI-LAKI',
-                style: Theme.of(context).textTheme.titleLarge,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
-              //Tabel
-              const TableWidget(tableAnak: tabelBBL),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: SizedBox(
-                      height: 60,
-                      child: Center(
-                        child: Image.asset('assets/images/home_button.png'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/male_gender_icon.png'),
+                Text(
+                  'Tabel Berat Badan Anak LAKI-LAKI',
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                //Tabel
+                const TableWidget(tableAnak: tabelBBL),
+                const SizedBox(height: 20),
+                SizedBox(
+                  height: 80,
+                  width: double.infinity,
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Positioned(
+                        left: 20,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: SizedBox(
+                              height: 60,
+                              child: Center(
+                                child: Image.asset(
+                                    'assets/images/home_button.png'),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      SimpanButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        title: 'KEMBALI',
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 20),
-                  SimpanButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    title: 'KEMBALI',
-                  ),
-                ],
-              )
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
