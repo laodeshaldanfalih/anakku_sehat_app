@@ -1,5 +1,6 @@
 import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:annakku_sehat_app/screens/daftar_anak_screen.dart';
+import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
 import 'package:annakku_sehat_app/widgets/date_picker_widget.dart';
 import 'package:annakku_sehat_app/widgets/form_widget.dart';
 import 'package:annakku_sehat_app/widgets/jenis_kelamin_form_widget.dart';
@@ -54,12 +55,18 @@ class _AnakFormWidgetState extends State<AnakFormWidget> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            title: const Text('Halo!'),
+            title: Text(
+              'Halo!',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
             content: const Text('Mohon untuk mengisi semua data ya 😁 '),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('Isi kembali'),
+                child: Text(
+                  'Isi kembali',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
             ],
           );
@@ -139,19 +146,9 @@ class _AnakFormWidgetState extends State<AnakFormWidget> {
         SizedBox(
           width: 160,
           height: 50,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xffA1D1D1)),
+          child: SimpanButton(
             onPressed: addDataAnak,
-            // onPressed: addDataAnak,
-            child: const Text(
-              'SIMPAN',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
+            title: 'SIMPAN',
           ),
         ),
       ],

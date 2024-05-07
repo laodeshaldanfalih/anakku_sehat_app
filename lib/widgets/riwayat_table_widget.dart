@@ -1,3 +1,4 @@
+import 'package:annakku_sehat_app/data/tabel.dart';
 import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:annakku_sehat_app/providers/anak_new_provider.dart';
 import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
@@ -34,6 +35,85 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
       }
     }
 
+    // warnign block color
+    Color blockColorW = const Color(0xffC00000);
+    Color blockColorH = const Color(0xffC00000);
+
+    // weight
+    Color light = const Color(0xffFF0000);
+    Color normalW = const Color(0xff92D04F);
+    Color heavy = const Color(0xffFFFF00);
+
+    //height
+    Color short = const Color(0xffFF0000);
+    Color normalH = const Color(0xff92D04F);
+    Color tall = const Color(0xffFFFF00);
+
+    // calculating baby diffrence months
+    final now = DateTime.now();
+    final difference = now.difference(widget.anak.tanggalLahir);
+    final monthsPassed = difference.inDays ~/ 30; // Approximate, not perfect
+
+    Color colorFilterWeight(AnakNew anak) {
+      //gender check
+      if (widget.anak.jenisKelamin == JenisKelamin.perempuan) {
+        // check weight value
+        if (anak.beratLahir < tabelBBP[monthsPassed][1]) {
+          return light;
+        } else if (anak.beratLahir >= tabelBBP[monthsPassed][1] &&
+            anak.beratLahir < tabelBBP[monthsPassed][2]) {
+          return light;
+        } else if (anak.beratLahir > tabelBBP[monthsPassed][2] &&
+            anak.beratLahir < tabelBBP[monthsPassed][5]) {
+          return normalW;
+        } else {
+          return heavy;
+        }
+      } else {
+        // check weight value
+        if (anak.panjangBadan < tabelBBL[monthsPassed][1]) {
+          return light;
+        } else if (anak.beratLahir >= tabelBBL[monthsPassed][1] &&
+            anak.beratLahir < tabelBBL[monthsPassed][2]) {
+          return short;
+        } else if (anak.beratLahir > tabelBBL[monthsPassed][2] &&
+            anak.beratLahir < tabelBBL[monthsPassed][5]) {
+          return normalW;
+        } else {
+          return tall;
+        }
+      }
+    }
+
+    Color colorFilterHeight(AnakNew anak) {
+      //gender check
+      if (widget.anak.jenisKelamin == JenisKelamin.perempuan) {
+        if (anak.panjangBadan < tabelTBP[monthsPassed][1]) {
+          return light;
+        } else if (anak.panjangBadan >= tabelTBP[monthsPassed][1] &&
+            anak.panjangBadan < tabelTBP[monthsPassed][2]) {
+          return short;
+        } else if (anak.panjangBadan > tabelTBP[monthsPassed][2] &&
+            anak.panjangBadan < tabelTBP[monthsPassed][7]) {
+          return normalH;
+        } else {
+          return tall;
+        }
+      } else {
+        if (anak.panjangBadan < tabelTBL[monthsPassed][1]) {
+          return light;
+        } else if (anak.panjangBadan >= tabelTBL[monthsPassed][1] &&
+            anak.panjangBadan < tabelTBL[monthsPassed][2]) {
+          return short;
+        } else if (anak.panjangBadan > tabelTBL[monthsPassed][2] &&
+            anak.panjangBadan < tabelTBL[monthsPassed][7]) {
+          return normalH;
+        } else {
+          return tall;
+        }
+      }
+    }
+
     return Column(
       children: [
         Container(
@@ -43,19 +123,33 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
           height: 50,
           width: double.infinity,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                'Hari/Tanggal',
-                style: Theme.of(context).textTheme.bodyLarge,
+              Expanded(
+                flex: 2,
+                child: Center(
+                  child: Text(
+                    'Hari/Tanggal',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
               ),
-              Text(
-                'BB',
-                style: Theme.of(context).textTheme.bodyLarge,
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Text(
+                    'BB',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
               ),
-              Text(
-                'TB',
-                style: Theme.of(context).textTheme.bodyLarge,
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Text(
+                    'TB',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
               ),
             ],
           ),
@@ -70,23 +164,52 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
                   height: 50,
                   decoration: BoxDecoration(
                     color: index % 2 == 0
-                        ? const Color(0xffE8F2F2)
+                        ? const Color.fromARGB(255, 221, 242, 237)
                         : const Color(0xffD9D9D9),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        formatter.format(history[index].tanggalLahir),
-                        style: Theme.of(context).textTheme.bodyLarge,
+                      Expanded(
+                        flex: 2,
+                        child: Center(
+                          child: Text(
+                            formatter.format(history[index].tanggalLahir),
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+                        ),
                       ),
-                      Text(
-                        history[index].beratLahir.toString(),
-                        style: Theme.of(context).textTheme.bodyLarge,
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Text(
+                            history[index].beratLahir.toString(),
+                            style: TextStyle(
+                              fontFamily: 'Rowdies',
+                              fontWeight: FontWeight.w300,
+                              color: colorFilterWeight(
+                                history[index],
+                              ),
+                              fontSize: 19, // bodyLarge
+                            ),
+                          ),
+                        ),
                       ),
-                      Text(
-                        history[index].panjangBadan.toString(),
-                        style: Theme.of(context).textTheme.bodyLarge,
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Text(
+                            history[index].panjangBadan.toString(),
+                            style: TextStyle(
+                              fontFamily: 'Rowdies',
+                              fontWeight: FontWeight.w300,
+                              color: colorFilterHeight(
+                                history[index],
+                              ),
+                              fontSize: 19, // bodyLarge
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),

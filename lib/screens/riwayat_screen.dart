@@ -9,22 +9,24 @@ class RiwayatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 100),
-          child: Column(
-            children: [
-              Text(
-                'Riwayat BB dan TB',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              RiwayatTableWidget(
-                anak: anak,
-              )
-            ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 100),
+            child: Column(
+              children: [
+                Text(
+                  'Riwayat BB dan TB',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                RiwayatTableWidget(
+                  anak: anak,
+                )
+              ],
+            ),
           ),
         ),
       ),
