@@ -76,6 +76,7 @@ class _DaftarAnakScreenState extends ConsumerState<DaftarAnakScreen> {
                     'Tambah Anak',
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontFamily: 'Rowdies',
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,

@@ -3,7 +3,6 @@ import 'package:annakku_sehat_app/screens/daftar_anak_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'screens/splash_screen.dart';
 
@@ -17,20 +16,38 @@ final theme = ThemeData().copyWith(
   useMaterial3: true,
   scaffoldBackgroundColor: colorScheme.background,
   colorScheme: colorScheme,
-  textTheme: GoogleFonts.rowdiesTextTheme().copyWith(
-    titleLarge: GoogleFonts.rowdies(
-        fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
-    titleMedium: GoogleFonts.rowdies(
-        fontWeight: FontWeight.bold, color: Colors.black, fontSize: 50),
-    titleSmall: GoogleFonts.rowdies(
-        fontWeight: FontWeight.bold, color: Colors.black, fontSize: 45),
-    bodyMedium: GoogleFonts.rowdies(
-      fontWeight: FontWeight.w300,
-      color: const Color.fromARGB(255, 125, 125, 125),
-      fontSize: 19,
+  textTheme: const TextTheme(
+    // Define text styles using the Rowdies font directly
+    titleMedium: TextStyle(
+      fontFamily: 'Rowdies',
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+      fontSize: 50, // titleMedium
     ),
-    bodyLarge: GoogleFonts.rowdies(
-        fontWeight: FontWeight.w300, color: Colors.black, fontSize: 19),
+    titleSmall: TextStyle(
+      fontFamily: 'Rowdies',
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+      fontSize: 45, // titleSmall
+    ),
+    titleLarge: TextStyle(
+      fontFamily: 'Rowdies',
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+      fontSize: 20, // titleLarge
+    ),
+    bodyMedium: TextStyle(
+      fontFamily: 'Rowdies',
+      fontWeight: FontWeight.w300,
+      color: Color.fromARGB(255, 125, 125, 125),
+      fontSize: 19, // bodyMedium
+    ),
+    bodyLarge: TextStyle(
+      fontFamily: 'Rowdies',
+      fontWeight: FontWeight.w300,
+      color: Colors.black,
+      fontSize: 19, // bodyLarge
+    ),
   ),
 );
 

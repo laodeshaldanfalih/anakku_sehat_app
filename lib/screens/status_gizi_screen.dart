@@ -1,5 +1,6 @@
 import 'package:annakku_sehat_app/data/tabel.dart';
 import 'package:annakku_sehat_app/models/anak.dart';
+import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -127,143 +128,138 @@ class StatusGiziScreen extends ConsumerWidget {
     ];
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 24),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Halo ${anak.namaPanggilan}!',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(height: 60),
-              Text(
-                'Status gizi ${anak.namaPanggilan} saat lahir:',
-                style: const TextStyle(
-                  color: Colors.black,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 24),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Halo ${anak.namaPanggilan}!',
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Berat lahir:',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              Text(
-                '${anak.beratLahir.toString()} kg',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              const SizedBox(height: 10),
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                  color: blockColorW,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    weightStatus,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color:
-                          isStuntingW ? const Color(0xffF6C1C8) : Colors.black,
-                      fontSize: 16,
-                    ),
+                const SizedBox(height: 60),
+                Text(
+                  'Status gizi ${anak.namaPanggilan} saat lahir:',
+                  style: const TextStyle(
+                    color: Colors.black,
                   ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Tinggi/Panjang Badan Lahir:',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              Text(
-                '${anak.panjangBadan.toString()} cm',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              const SizedBox(height: 10),
-              Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                  color: blockColorH,
-                  borderRadius: BorderRadius.circular(20),
+                const SizedBox(height: 20),
+                Text(
+                  'Berat lahir:',
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                child: Center(
-                  child: Text(
-                    heightStatus,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color:
-                          isStuntingH ? const Color(0xffF6C1C8) : Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
+                Text(
+                  '${anak.beratLahir.toString()} kg',
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              ),
-              const SizedBox(height: 30),
-              Text(
-                'Saran dokter untuk ${anak.namaPanggilan} adalah: ',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              const SizedBox(height: 10),
-              Container(
-                height: 150,
-                decoration: BoxDecoration(
+                const SizedBox(height: 10),
+                Container(
+                  height: 50,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: blockColorW,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 3),
-                    color: const Color(0xffA1D1D1)),
-                child: ListView.builder(
-                  itemBuilder: (ctx, index) => Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: const Color(0xffD9D9D9),
-                          child: Text(
-                            '${(index + 1)}',
+                  ),
+                  child: Center(
+                    child: Text(
+                      weightStatus,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: isStuntingW
+                            ? const Color(0xffF6C1C8)
+                            : Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'Tinggi/Panjang Badan Lahir:',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text(
+                  '${anak.panjangBadan.toString()} cm',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  height: 50,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: blockColorH,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      heightStatus,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: isStuntingH
+                            ? const Color(0xffF6C1C8)
+                            : Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  'Saran dokter untuk ${anak.namaPanggilan} adalah: ',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  height: 150,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(width: 3),
+                      color: const Color(0xffA1D1D1)),
+                  child: ListView.builder(
+                    itemBuilder: (ctx, index) => Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: const Color(0xffD9D9D9),
+                            child: Text(
+                              '${(index + 1)}',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          title: Text(
+                            arr[index],
                             style: const TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 16,
                             ),
                           ),
                         ),
-                        title: Text(
-                          arr[index],
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  itemCount: arr.length,
-                ),
-              ),
-              const SizedBox(
-                height: 80,
-              ),
-              SizedBox(
-                width: 160,
-                height: 50,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xffA1D1D1)),
-                  onPressed: () => Navigator.of(context).pop(),
-                  // onPressed: addDataAnak,
-                  child: const Text(
-                    'KEMBALI',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      ],
                     ),
+                    itemCount: arr.length,
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(
+                  height: 80,
+                ),
+                SizedBox(
+                  width: 160,
+                  height: 50,
+                  child: SimpanButton(
+                    title: 'KEMBALI',
+                    onPressed: () => Navigator.of(context).pop(),
+                    // onPressed: addDataAnak,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
