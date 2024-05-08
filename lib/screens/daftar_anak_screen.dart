@@ -1,4 +1,3 @@
-import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:annakku_sehat_app/providers/anak_provider.dart';
 import 'package:annakku_sehat_app/screens/init_data_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,14 +20,6 @@ class _DaftarAnakScreenState extends ConsumerState<DaftarAnakScreen> {
     // TODO: implement initState
     super.initState();
     _anaksFuture = ref.read(anakProvider.notifier).loadAnaks();
-  }
-
-  void bacaDataAnak(Anak anak) {
-    print(anak.nama);
-  }
-
-  void _addAnak(Anak anak) {
-    ref.read(anakProvider.notifier).addAnak(anak);
   }
 
   @override
@@ -71,7 +62,6 @@ class _DaftarAnakScreenState extends ConsumerState<DaftarAnakScreen> {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (ctx) => const InitDataScreen()));
                   },
-                  // onPressed: addDataAnak,
                   child: const Text(
                     'Tambah Anak',
                     textAlign: TextAlign.center,

@@ -70,7 +70,6 @@ class AnakProviderNotifier extends StateNotifier<List<Anak>> {
 
   void addAnak(Anak anak) async {
     final newAnak = anak;
-    print(newAnak.tanggalLahir);
     final jenisKelamin;
 
     if (newAnak.jenisKelamin == JenisKelamin.laki_laki) {

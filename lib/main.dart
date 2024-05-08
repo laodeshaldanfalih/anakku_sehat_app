@@ -91,9 +91,6 @@ class _MyAppState extends ConsumerState<MyApp> {
       () {
         if (mounted) {
           setState(() {
-            // for (var i = 0; i < anakDummyData.length; i++) {
-            //   ref.read(anakProvider.notifier).addAnak(anakDummyData[i]);
-            // }
             activeScreen = 'daftar-anak-screen';
           });
         }
