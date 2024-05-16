@@ -1,6 +1,5 @@
 import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class JenisKelaminFormWidget extends StatefulWidget {
@@ -68,11 +67,8 @@ class _JenisKelaminFormWidgetState extends State<JenisKelaminFormWidget> {
                     items: JenisKelamin.values.map((jenisKelamin) {
                       return DropdownMenuItem(
                         value: jenisKelamin,
-                        child: Text(
-                          enumToString(jenisKelamin).toUpperCase(),
-                          style: GoogleFonts.rowdies(
-                              fontWeight: FontWeight.bold, fontSize: 15),
-                        ),
+                        child: Text(enumToString(jenisKelamin).toUpperCase(),
+                            style: Theme.of(context).textTheme.titleLarge),
                       );
                     }).toList(),
                   ),

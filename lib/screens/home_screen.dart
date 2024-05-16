@@ -4,6 +4,7 @@ import 'package:annakku_sehat_app/screens/menu_sehat_screen.dart';
 import 'package:annakku_sehat_app/screens/riwayat_screen.dart';
 import 'package:annakku_sehat_app/screens/status_gizi_screen.dart';
 import 'package:annakku_sehat_app/screens/tambah_data_screen.dart';
+import 'package:annakku_sehat_app/screens/tentang_aplikasi_screen.dart';
 import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
 import 'package:annakku_sehat_app/widgets/home_menu_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   color: 0xffF4EDCC,
+                ),
+                const SizedBox(height: 30),
+                HomeMenuButtonWidget(
+                  title: 'Tentang Aplikasi',
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const TentangAplikasiScreen(),
+                    ),
+                  ),
+                  color: 0xffFFF3BB,
                 ),
                 const SizedBox(height: 90),
                 SimpanButton(
