@@ -35,7 +35,7 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
       }
     }
 
-    // warnign block color
+    // warning block color
     Color blockColorW = const Color(0xffC00000);
     Color blockColorH = const Color(0xffC00000);
 
@@ -184,12 +184,13 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
                         child: Center(
                           child: Text(
                             history[index].beratLahir.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Rowdies',
                               fontWeight: FontWeight.w300,
-                              color: colorFilterWeight(
-                                history[index],
-                              ),
+                              // color: colorFilterWeight(
+                              //   history[index],
+                              // ),
+                              color: Colors.black,
                               fontSize: 19, // bodyLarge
                             ),
                           ),
@@ -200,12 +201,13 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
                         child: Center(
                           child: Text(
                             history[index].panjangBadan.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Rowdies',
                               fontWeight: FontWeight.w300,
-                              color: colorFilterHeight(
-                                history[index],
-                              ),
+                              // color: colorFilterHeight(
+                              //   history[index],
+                              // ),
+                              color: Colors.black,
                               fontSize: 19, // bodyLarge
                             ),
                           ),
