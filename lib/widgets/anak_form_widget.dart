@@ -55,17 +55,27 @@ class _AnakFormWidgetState extends State<AnakFormWidget> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            title: Text(
-              'Halo!',
-              style: Theme.of(context).textTheme.bodyMedium,
+            title: Text('Halo!',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge),
+            content: const Text(
+              'Mohon untuk mengisi semua data ya 😁 ',
+              textAlign: TextAlign.center,
             ),
-            content: const Text('Mohon untuk mengisi semua data ya 😁 '),
             actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(
-                  'Isi kembali',
-                  style: Theme.of(context).textTheme.titleLarge,
+              Center(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      const Color(0xffA1D1D1), // Set your background color here
+                    ),
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Isi kembali',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ],
@@ -131,15 +141,18 @@ class _AnakFormWidgetState extends State<AnakFormWidget> {
           title: 'Tanggal lahir',
         ),
         const SizedBox(height: 10),
-        FormWidget(title: 'Berat Lahir', controller: _beratLahirController),
+        FormWidget(
+          title: 'Berat Lahir (kg)',
+          controller: _beratLahirController,
+        ),
         const SizedBox(height: 10),
         FormWidget(
-          title: 'Tinggi/Panjang Badan Lahir',
+          title: 'Tinggi/Panjang Badan Lahir (cm)',
           controller: _panjangBadanLahirController,
         ),
         const SizedBox(height: 10),
         FormWidget(
-          title: 'lingkar Kepala Lahir',
+          title: 'lingkar Kepala Lahir (cm)',
           controller: _lingkarKepalaController,
         ),
         const SizedBox(height: 28),

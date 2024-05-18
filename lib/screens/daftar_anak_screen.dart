@@ -39,7 +39,10 @@ class _DaftarAnakScreenState extends ConsumerState<DaftarAnakScreen> {
               const SizedBox(height: 20),
               Flexible(
                 child: anaks.isEmpty
-                    ? const Text('Belum ada anak yang terdadtar :(')
+                    ? const Text(
+                        'Belum ada anak yang terdadtar :(',
+                        textAlign: TextAlign.center,
+                      )
                     // : DaftarAnakListWidget(anak: anaks),
                     : FutureBuilder(
                         future: _anaksFuture,

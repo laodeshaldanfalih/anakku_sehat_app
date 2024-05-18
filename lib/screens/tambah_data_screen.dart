@@ -4,6 +4,7 @@ import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
 import 'package:annakku_sehat_app/widgets/date_picker_widget.dart';
 import 'package:annakku_sehat_app/widgets/form_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class TambahDataScreen extends ConsumerStatefulWidget {
@@ -40,12 +41,28 @@ class _TambahDataScreenState extends ConsumerState<TambahDataScreen> {
         context: context,
         builder: (ctx) {
           return AlertDialog(
-            title: const Text('Halo!'),
-            content: const Text('Mohon untuk mengisi semua data ya 😁 '),
+            title: Text('Halo!',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge),
+            content: const Text(
+              'Mohon untuk mengisi semua data ya 😁 ',
+              textAlign: TextAlign.center,
+            ),
             actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('Isi kembali'),
+              Center(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      const Color(0xffA1D1D1), // Set your background color here
+                    ),
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'Isi kembali',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ],
           );

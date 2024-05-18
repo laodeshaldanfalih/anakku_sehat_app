@@ -187,12 +187,12 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
                             style: const TextStyle(
                               fontFamily: 'Rowdies',
                               fontWeight: FontWeight.w300,
-                              // color: colorFilterWeight(
-                              //   history[index],
-                              // ),
+
                               color: Colors.black,
                               fontSize: 19, // bodyLarge
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ),
@@ -204,12 +204,12 @@ class _RiwayatTableWidgetState extends ConsumerState<RiwayatTableWidget> {
                             style: const TextStyle(
                               fontFamily: 'Rowdies',
                               fontWeight: FontWeight.w300,
-                              // color: colorFilterHeight(
-                              //   history[index],
-                              // ),
+
                               color: Colors.black,
                               fontSize: 19, // bodyLarge
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ),

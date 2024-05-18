@@ -138,6 +138,7 @@ class StatusGiziScreen extends ConsumerWidget {
                 Text(
                   'Halo ${anak.namaPanggilan}!',
                   style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 60),
                 Text(
@@ -145,15 +146,18 @@ class StatusGiziScreen extends ConsumerWidget {
                   style: const TextStyle(
                     color: Colors.black,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
                 Text(
                   'Berat lahir:',
                   style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '${anak.beratLahir.toString()} kg',
                   style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Container(
@@ -180,10 +184,12 @@ class StatusGiziScreen extends ConsumerWidget {
                 Text(
                   'Tinggi/Panjang Badan Lahir:',
                   style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '${anak.panjangBadan.toString()} cm',
                   style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Container(
@@ -210,6 +216,7 @@ class StatusGiziScreen extends ConsumerWidget {
                 Text(
                   'Saran dokter untuk ${anak.namaPanggilan} adalah: ',
                   style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Container(

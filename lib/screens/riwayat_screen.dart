@@ -18,6 +18,7 @@ class RiwayatScreen extends StatelessWidget {
                 Text(
                   'Riwayat BB dan TB',
                   style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(
                   height: 20,
