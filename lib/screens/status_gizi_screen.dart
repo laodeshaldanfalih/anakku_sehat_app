@@ -127,145 +127,148 @@ class StatusGiziScreen extends ConsumerWidget {
       'Jangan lupa mencatat berat badan dan tinggi badan di aplikasi Anakku Sehat',
     ];
 
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Halo ${anak.namaPanggilan}!',
-                  style: Theme.of(context).textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 60),
-                Text(
-                  'Status gizi ${anak.namaPanggilan} saat lahir:',
-                  style: const TextStyle(
-                    color: Colors.black,
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Halo ${anak.namaPanggilan}!',
+                    style: Theme.of(context).textTheme.titleLarge,
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  'Berat lahir:',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  '${anak.beratLahir.toString()} kg',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 50,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    color: blockColorW,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                    child: Text(
-                      weightStatus,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: isStuntingW
-                            ? const Color(0xffF6C1C8)
-                            : Colors.black,
-                        fontSize: 16,
-                      ),
+                  const SizedBox(height: 60),
+                  Text(
+                    'Status gizi ${anak.namaPanggilan} saat lahir:',
+                    style: const TextStyle(
+                      color: Colors.black,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  'Tinggi/Panjang Badan Lahir:',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  '${anak.panjangBadan.toString()} cm',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 50,
-                  width: 250,
-                  decoration: BoxDecoration(
-                    color: blockColorH,
-                    borderRadius: BorderRadius.circular(20),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Berat lahir:',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
                   ),
-                  child: Center(
-                    child: Text(
-                      heightStatus,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: isStuntingH
-                            ? const Color(0xffF6C1C8)
-                            : Colors.black,
-                        fontSize: 16,
-                      ),
-                    ),
+                  Text(
+                    '${anak.beratLahir.toString()} kg',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                const SizedBox(height: 30),
-                Text(
-                  'Saran dokter untuk ${anak.namaPanggilan} adalah: ',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 150,
-                  decoration: BoxDecoration(
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      color: blockColorW,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 3),
-                      color: const Color(0xffA1D1D1)),
-                  child: ListView.builder(
-                    itemBuilder: (ctx, index) => Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: const Color(0xffD9D9D9),
-                            child: Text(
-                              '${(index + 1)}',
+                    ),
+                    child: Center(
+                      child: Text(
+                        weightStatus,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: isStuntingW
+                              ? const Color(0xffF6C1C8)
+                              : Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Tinggi/Panjang Badan Lahir:',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '${anak.panjangBadan.toString()} cm',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      color: blockColorH,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text(
+                        heightStatus,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: isStuntingH
+                              ? const Color(0xffF6C1C8)
+                              : Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Text(
+                    'Saran dokter untuk ${anak.namaPanggilan} adalah: ',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    height: 150,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(width: 3),
+                        color: const Color(0xffA1D1D1)),
+                    child: ListView.builder(
+                      itemBuilder: (ctx, index) => Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: const Color(0xffD9D9D9),
+                              child: Text(
+                                '${(index + 1)}',
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                            title: Text(
+                              arr[index],
                               style: const TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 16,
                               ),
                             ),
                           ),
-                          title: Text(
-                            arr[index],
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      itemCount: arr.length,
                     ),
-                    itemCount: arr.length,
                   ),
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
-                SizedBox(
-                  width: 160,
-                  height: 50,
-                  child: SimpanButton(
-                    title: 'KEMBALI',
-                    onPressed: () => Navigator.of(context).pop(),
-                    // onPressed: addDataAnak,
+                  const SizedBox(
+                    height: 80,
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 160,
+                    height: 50,
+                    child: SimpanButton(
+                      title: 'KEMBALI',
+                      onPressed: () => Navigator.of(context).pop(),
+                      // onPressed: addDataAnak,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

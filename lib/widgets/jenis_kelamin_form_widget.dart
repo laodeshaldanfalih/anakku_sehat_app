@@ -34,7 +34,6 @@ class _JenisKelaminFormWidgetState extends State<JenisKelaminFormWidget> {
         ),
         const SizedBox(height: 10),
         Container(
-          height: 65,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(50),
@@ -44,6 +43,8 @@ class _JenisKelaminFormWidgetState extends State<JenisKelaminFormWidget> {
             builder: (FormFieldState state) {
               return InputDecorator(
                 decoration: InputDecoration(
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 4.0, horizontal: 15),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                     borderSide: BorderSide.none,
@@ -67,8 +68,10 @@ class _JenisKelaminFormWidgetState extends State<JenisKelaminFormWidget> {
                     items: JenisKelamin.values.map((jenisKelamin) {
                       return DropdownMenuItem(
                         value: jenisKelamin,
-                        child: Text(enumToString(jenisKelamin).toUpperCase(),
-                            style: Theme.of(context).textTheme.titleLarge),
+                        child: Text(
+                          enumToString(jenisKelamin).toUpperCase(),
+                          style: const TextStyle(fontSize: 18),
+                        ),
                       );
                     }).toList(),
                   ),

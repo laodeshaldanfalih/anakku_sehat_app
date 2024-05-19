@@ -102,6 +102,8 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
               builder: (FormFieldState state) {
                 return InputDecorator(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15.0, horizontal: 15),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide.none,

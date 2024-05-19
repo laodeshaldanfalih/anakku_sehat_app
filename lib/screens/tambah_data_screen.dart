@@ -85,79 +85,82 @@ class _TambahDataScreenState extends ConsumerState<TambahDataScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 24),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      Positioned(
-                        left: 0,
-                        child: GestureDetector(
-                          onTap: () => Navigator.of(context).pop(),
-                          child: SizedBox(
-                            child: Image.asset(
-                              'assets/images/back_button.png',
-                              scale: 2,
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 24),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: 60,
+                    width: double.infinity,
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        Positioned(
+                          left: 0,
+                          child: GestureDetector(
+                            onTap: () => Navigator.of(context).pop(),
+                            child: SizedBox(
+                              child: Image.asset(
+                                'assets/images/back_button.png',
+                                scale: 2,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Center(
-                        child: Text(
-                          'Tambah Data Baru',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.titleLarge,
+                        Center(
+                          child: Text(
+                            'Tambah Data Baru',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(height: 50),
-                Text(
-                  'Masukkan data terbaru: ',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                DatePickerWidget(
-                  onDateChanged: (DateTime? newDate) {
-                    setState(() {
-                      _tanggalTimbangController = newDate;
-                    });
-                  },
-                  title: 'Tanggal timbang badan',
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                FormWidget(
-                  title: 'Berat saat ditimbang (kg)',
-                  controller: _beratTimbangController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                FormWidget(
-                  title: 'Panjang/tinggi badan (cm)',
-                  controller: _panjangBadanController,
-                ),
-                const SizedBox(height: 80),
-                SimpanButton(
-                  onPressed: addDataBaru,
-                  title: 'SIMPAN',
-                ),
-              ],
+                  const SizedBox(height: 50),
+                  Text(
+                    'Masukkan data terbaru: ',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  DatePickerWidget(
+                    onDateChanged: (DateTime? newDate) {
+                      setState(() {
+                        _tanggalTimbangController = newDate;
+                      });
+                    },
+                    title: 'Tanggal timbang badan',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  FormWidget(
+                    title: 'Berat saat ditimbang (kg)',
+                    controller: _beratTimbangController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  FormWidget(
+                    title: 'Panjang/tinggi badan (cm)',
+                    controller: _panjangBadanController,
+                  ),
+                  const SizedBox(height: 80),
+                  SimpanButton(
+                    onPressed: addDataBaru,
+                    title: 'SIMPAN',
+                  ),
+                ],
+              ),
             ),
           ),
         ),

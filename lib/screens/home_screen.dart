@@ -15,93 +15,96 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/home_icon.png',
-                      scale: 1.5,
-                    ),
-                    const SizedBox(width: 25),
-                    Text(
-                      'Halo, ${anak.namaPanggilan}!',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Tambah Data',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => TambahDataScreen(anak: anak),
-                    ),
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: Center(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/home_icon.png',
+                        scale: 1.5,
+                      ),
+                      const SizedBox(width: 25),
+                      Text(
+                        'Halo, ${anak.namaPanggilan}!',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
                   ),
-                  color: 0xff789461,
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Status Gizi Terakhir',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => StatusGiziScreen(anak: anak),
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Tambah Data',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => TambahDataScreen(anak: anak),
+                      ),
                     ),
+                    color: 0xff789461,
                   ),
-                  color: 0xffA4CE95,
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Lihat Riwayat BB dan TB',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => RiwayatScreen(anak: anak),
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Status Gizi Terakhir',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => StatusGiziScreen(anak: anak),
+                      ),
                     ),
+                    color: 0xffA4CE95,
                   ),
-                  color: 0xffC6EBC5,
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Berapa BB dan TB Normal?',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => const InformasiBBTBScreen(),
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Lihat Riwayat BB dan TB',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => RiwayatScreen(anak: anak),
+                      ),
                     ),
+                    color: 0xffC6EBC5,
                   ),
-                  color: 0xffD9EDBF,
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Menu Sehat',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => const MenuSehatScreen(),
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Berapa BB dan TB Normal?',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => const InformasiBBTBScreen(),
+                      ),
                     ),
+                    color: 0xffD9EDBF,
                   ),
-                  color: 0xffF4EDCC,
-                ),
-                const SizedBox(height: 30),
-                HomeMenuButtonWidget(
-                  title: 'Tentang Aplikasi',
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) => const TentangAplikasiScreen(),
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Menu Sehat',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => const MenuSehatScreen(),
+                      ),
                     ),
+                    color: 0xffF4EDCC,
                   ),
-                  color: 0xffFFF3BB,
-                ),
-                const SizedBox(height: 90),
-                SimpanButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    title: 'KELUAR')
-              ],
+                  const SizedBox(height: 30),
+                  HomeMenuButtonWidget(
+                    title: 'Tentang Aplikasi',
+                    onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => const TentangAplikasiScreen(),
+                      ),
+                    ),
+                    color: 0xffFFF3BB,
+                  ),
+                  const SizedBox(height: 90),
+                  SimpanButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      title: 'KELUAR')
+                ],
+              ),
             ),
           ),
         ),

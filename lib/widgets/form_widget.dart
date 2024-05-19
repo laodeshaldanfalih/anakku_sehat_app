@@ -12,10 +12,10 @@ class FormWidget extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(fontSize: 20),
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 10),
         Container(
-          height: 65,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(50),
@@ -25,7 +25,7 @@ class FormWidget extends StatelessWidget {
             controller: controller,
             decoration: InputDecoration(
               contentPadding:
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide.none,
