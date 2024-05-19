@@ -37,17 +37,17 @@ class StatusGiziScreen extends ConsumerWidget {
     //gender check
     if (anak.jenisKelamin == JenisKelamin.perempuan) {
       // check weight value
-      if (anak.beratLahir < tabelBBP[monthsPassed][1]) {
+      if (anak.beratLahir < tabelBBP[0][1]) {
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN SANGAT KURANG';
-      } else if (anak.beratLahir >= tabelBBP[monthsPassed][1] &&
+      } else if (anak.beratLahir >= tabelBBP[0][1] &&
           anak.beratLahir < tabelBBP[monthsPassed][2]) {
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN KURANG';
-      } else if (anak.beratLahir >= tabelBBP[monthsPassed][2] &&
-          anak.beratLahir < tabelBBP[monthsPassed][5]) {
+      } else if (anak.beratLahir >= tabelBBP[0][2] &&
+          anak.beratLahir < tabelBBP[0][5]) {
         isStuntingW = false;
         blockColorW = normalW;
         weightStatus = 'BERAT BADAN NORNAL';
@@ -58,17 +58,17 @@ class StatusGiziScreen extends ConsumerWidget {
       }
 
       // check height value
-      if (anak.panjangBadan < tabelTBP[monthsPassed][1]) {
+      if (anak.panjangBadan < tabelTBP[0][1]) {
         isStuntingH = true;
         blockColorH = light;
         heightStatus = 'SANGAT PENDEK';
-      } else if (anak.panjangBadan >= tabelTBP[monthsPassed][1] &&
-          anak.panjangBadan < tabelTBP[monthsPassed][2]) {
+      } else if (anak.panjangBadan >= tabelTBP[0][1] &&
+          anak.panjangBadan < tabelTBP[0][2]) {
         isStuntingH = true;
         blockColorH = short;
         heightStatus = 'PENDEK';
-      } else if (anak.panjangBadan >= tabelTBP[monthsPassed][2] &&
-          anak.panjangBadan < tabelTBP[monthsPassed][7]) {
+      } else if (anak.panjangBadan >= tabelTBP[0][2] &&
+          anak.panjangBadan < tabelTBP[0][7]) {
         isStuntingH = false;
         blockColorH = normalH;
         heightStatus = 'NORMAL';
@@ -79,17 +79,17 @@ class StatusGiziScreen extends ConsumerWidget {
       }
     } else {
       // check weight value
-      if (anak.panjangBadan < tabelBBL[monthsPassed][1]) {
+      if (anak.panjangBadan < tabelBBL[0][1]) {
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN SANGAT KURANG';
-      } else if (anak.beratLahir >= tabelBBL[monthsPassed][1] &&
+      } else if (anak.beratLahir >= tabelBBL[0][1] &&
           anak.beratLahir < tabelBBL[monthsPassed][2]) {
         isStuntingW = true;
         blockColorW = short;
         weightStatus = 'BERAT BADAN KURANG';
-      } else if (anak.beratLahir >= tabelBBL[monthsPassed][2] &&
-          anak.beratLahir < tabelBBL[monthsPassed][5]) {
+      } else if (anak.beratLahir >= tabelBBL[0][2] &&
+          anak.beratLahir < tabelBBL[0][5]) {
         isStuntingW = false;
         blockColorW = normalW;
         weightStatus = 'BERAT BADAN NORNAL';
@@ -100,17 +100,17 @@ class StatusGiziScreen extends ConsumerWidget {
       }
 
       // check height value
-      if (anak.panjangBadan < tabelTBL[monthsPassed][1]) {
+      if (anak.panjangBadan < tabelTBL[0][1]) {
         isStuntingH = true;
         blockColorH = light;
         heightStatus = 'SANGAT PENDEK';
-      } else if (anak.panjangBadan >= tabelTBL[monthsPassed][1] &&
-          anak.panjangBadan < tabelTBL[monthsPassed][2]) {
+      } else if (anak.panjangBadan >= tabelTBL[0][1] &&
+          anak.panjangBadan < tabelTBL[0][2]) {
         isStuntingH = true;
         blockColorH = short;
         heightStatus = 'PENDEK';
-      } else if (anak.panjangBadan >= tabelTBL[monthsPassed][2] &&
-          anak.panjangBadan < tabelTBL[monthsPassed][7]) {
+      } else if (anak.panjangBadan >= tabelTBL[0][2] &&
+          anak.panjangBadan < tabelTBL[0][7]) {
         isStuntingH = false;
         blockColorH = normalH;
         heightStatus = 'NORMAL';
