@@ -36,13 +36,14 @@ class StatusGiziScreen extends ConsumerWidget {
 
     //gender check
     if (anak.jenisKelamin == JenisKelamin.perempuan) {
+      print('perempuan');
       // check weight value
       if (anak.beratLahir < tabelBBP[0][1]) {
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN SANGAT KURANG';
       } else if (anak.beratLahir >= tabelBBP[0][1] &&
-          anak.beratLahir < tabelBBP[monthsPassed][2]) {
+          anak.beratLahir < tabelBBP[0][2]) {
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN KURANG';
@@ -78,18 +79,23 @@ class StatusGiziScreen extends ConsumerWidget {
         heightStatus = 'TINGGI';
       }
     } else {
+      print('laki');
+      print(anak.beratLahir);
       // check weight value
-      if (anak.panjangBadan < tabelBBL[0][1]) {
+      if (anak.beratLahir < tabelBBL[0][1]) {
+        print('1');
         isStuntingW = true;
         blockColorW = light;
         weightStatus = 'BERAT BADAN SANGAT KURANG';
       } else if (anak.beratLahir >= tabelBBL[0][1] &&
-          anak.beratLahir < tabelBBL[monthsPassed][2]) {
+          anak.beratLahir < tabelBBL[0][2]) {
+        print('2');
         isStuntingW = true;
         blockColorW = short;
         weightStatus = 'BERAT BADAN KURANG';
       } else if (anak.beratLahir >= tabelBBL[0][2] &&
           anak.beratLahir < tabelBBL[0][5]) {
+        print('3');
         isStuntingW = false;
         blockColorW = normalW;
         weightStatus = 'BERAT BADAN NORNAL';

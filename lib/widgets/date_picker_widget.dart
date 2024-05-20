@@ -15,7 +15,8 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
   DateTime? tanggalLahir;
   Future<void> _showDatePicker() async {
     final now = DateTime.now();
-    final firstDate = now.subtract(const Duration(days: 30 * 60));
+    // final firstDate = now.subtract(const Duration(days: 30 * 60));
+    final firstDate = DateTime(now.year - 100, now.month, now.day);
 
     final ThemeData customTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
