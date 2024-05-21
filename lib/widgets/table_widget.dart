@@ -1,5 +1,6 @@
 import 'package:annakku_sehat_app/widgets/row_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 class TableWidget extends StatelessWidget {
   const TableWidget({super.key, required this.tableAnak});
@@ -23,11 +24,11 @@ class TableWidget extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Color(0xff22DDDD),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Umur\n(Bulan)',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
               ),

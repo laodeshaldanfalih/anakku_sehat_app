@@ -138,6 +138,7 @@ class _AnakFormWidgetState extends State<AnakFormWidget> {
               _tanggalLahirController = newDate;
             });
           },
+          initialBirthDate: true,
           title: 'Tanggal lahir',
         ),
         const SizedBox(height: 10),

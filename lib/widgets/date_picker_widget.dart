@@ -2,10 +2,15 @@ import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:flutter/material.dart';
 
 class DatePickerWidget extends StatefulWidget {
-  const DatePickerWidget(
-      {super.key, required this.onDateChanged, required this.title});
+  const DatePickerWidget({
+    super.key,
+    required this.onDateChanged,
+    required this.title,
+    required this.initialBirthDate,
+  });
   final Function(DateTime?) onDateChanged;
   final title;
+  final bool initialBirthDate;
 
   @override
   State<DatePickerWidget> createState() => _DatePickerWidgetState();
@@ -15,8 +20,10 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
   DateTime? tanggalLahir;
   Future<void> _showDatePicker() async {
     final now = DateTime.now();
-    // final firstDate = now.subtract(const Duration(days: 30 * 60));
-    final firstDate = DateTime(now.year - 100, now.month, now.day);
+    final firstDateForTambahData = now.subtract(const Duration(days: 30 * 60));
+    final firstDateForInitData = DateTime(now.year - 100, now.month, now.day);
+    final dateTime =
+        widget.initialBirthDate ? firstDateForInitData : firstDateForTambahData;
 
     final ThemeData customTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
@@ -62,7 +69,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: now,
-      firstDate: firstDate,
+      firstDate: dateTime,
       lastDate: now,
       builder: (BuildContext context, Widget? child) {
         return Theme(

@@ -138,6 +138,7 @@ class _TambahDataScreenState extends ConsumerState<TambahDataScreen> {
                         _tanggalTimbangController = newDate;
                       });
                     },
+                    initialBirthDate: false,
                     title: 'Tanggal timbang badan',
                   ),
                   const SizedBox(
