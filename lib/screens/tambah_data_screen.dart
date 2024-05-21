@@ -2,6 +2,7 @@ import 'package:annakku_sehat_app/models/anak.dart';
 import 'package:annakku_sehat_app/providers/anak_new_provider.dart';
 import 'package:annakku_sehat_app/widgets/buttons/simpan_button.dart';
 import 'package:annakku_sehat_app/widgets/date_picker_widget.dart';
+import 'package:annakku_sehat_app/widgets/date_picker_widget_tambah_data.dart';
 import 'package:annakku_sehat_app/widgets/form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -132,13 +133,14 @@ class _TambahDataScreenState extends ConsumerState<TambahDataScreen> {
                   const SizedBox(
                     height: 50,
                   ),
-                  DatePickerWidget(
+                  DatePickerWidgetTambahData(
                     onDateChanged: (DateTime? newDate) {
                       setState(() {
                         _tanggalTimbangController = newDate;
                       });
                     },
                     initialBirthDate: false,
+                    anak: widget.anak,
                     title: 'Tanggal timbang badan',
                   ),
                   const SizedBox(

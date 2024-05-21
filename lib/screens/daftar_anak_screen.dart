@@ -1,5 +1,6 @@
 import 'package:annakku_sehat_app/providers/anak_provider.dart';
 import 'package:annakku_sehat_app/screens/init_data_screen.dart';
+import 'package:annakku_sehat_app/screens/tentang_aplikasi_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -79,6 +80,31 @@ class _DaftarAnakScreenState extends ConsumerState<DaftarAnakScreen> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 180,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 134, 144, 144)),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (ctx) => const TentangAplikasiScreen()));
+                    },
+                    child: const Text(
+                      'Tentang Aplikasi',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Rowdies',
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
