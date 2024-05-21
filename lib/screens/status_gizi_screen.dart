@@ -120,23 +120,9 @@ class _StatusGiziScreenState extends ConsumerState<StatusGiziScreen> {
                     } else {
                       return isOutOfStuntingMonth
                           ? const Center(
-                              child: Text.rich(
-                                TextSpan(
-                                  text:
-                                      "Terima kasih telah menggunakan aplikasi Anakku Sehat.\n\nUsia anak telah melebihi 1000 hari sejak kelahiran. Konsultasikan lebih lanjut ke dokter untuk mengetahui ",
-                                  style:
-                                      TextStyle(), // You can define a base style here
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'status',
-                                      style: TextStyle(
-                                          fontStyle: FontStyle.italic),
-                                    ),
-                                    TextSpan(
-                                      text: ' gizi terkini anak.',
-                                    ),
-                                  ],
-                                ),
+                              child: Text(
+                                "Terima kasih telah menggunakan aplikasi Anakku Sehat.\n\nUsia anak telah melebihi 1000 hari sejak kelahiran. Konsultasikan lebih lanjut ke dokter untuk mengetahui status gizi terkini anak.",
+                                style: TextStyle(),
                                 textAlign: TextAlign.center,
                               ),
                             )
