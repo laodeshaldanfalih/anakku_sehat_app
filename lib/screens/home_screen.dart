@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   HomeMenuButtonWidget(
-                    title: 'Status Gizi Terakhir',
+                    title: 'Status Gizi',
                     onPressed: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (ctx) => StatusGiziScreen(anak: anak),
